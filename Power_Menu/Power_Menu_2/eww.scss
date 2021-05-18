@@ -1,0 +1,57 @@
+window{
+    background-color: transparent;
+}
+
+.special{
+    all: unset;
+    font-size: 55px;
+    color: #88C0D0;
+    background-color: #272b31;
+}
+
+.special:hover{
+    font-size: 70px;
+    color: #88C;
+}
+
+.colorize{
+    background-color: #272b31;
+    font-size: 50px;
+}
+
+.yes:hover{
+    background-color: #272b31;
+    font-size: 60px;
+    color: #A3BE8C;
+}
+.back:hover{
+    font-size: 60px;
+    color: #EBCB8B;
+}
+
+
+.no:hover{
+    font-size: 60px;
+    color: #BF616A;
+}
+
+.blur{
+    background-color: transparent;
+}
+.text{
+    all: unset;
+    background-color: #272b31;
+    font-size: 60px;
+    color: #88C0D0;
+}
+
+.text:hover{
+    color: #88C;
+}
+
+.lock_on{
+    all: unset;
+    background-color: transparent;
+    font-size: 100px;
+    color: #BF616A;
+}

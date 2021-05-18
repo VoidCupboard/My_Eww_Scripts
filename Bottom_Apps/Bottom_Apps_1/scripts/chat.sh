@@ -1,0 +1,1 @@
+firefox https://web.whatsapp.com

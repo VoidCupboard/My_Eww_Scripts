@@ -1,0 +1,143 @@
+* {
+  all: unset;
+}
+
+windows {
+  background-color: transparent;
+}
+
+.blur {
+  background-color: transparent;
+}
+
+.icon {
+  background-color: transparent;
+  font-size: 69px; // Change The Size Of The Icons
+}
+
+button {
+  all: unset;
+  background-color: transparent;
+  padding: 10px;
+}
+
+.clock {
+  font-family: monospace;
+  font-size: 49px; // Change The Size Of The Text Of Clock
+  background-color: #272b31;
+  color: #88c0d0;
+}
+
+.date {
+  font-family: monospace;
+  font-size: 49px; // Change The Size Of The Text Of Clock
+  background-color: #272b31;
+  color: #88c0d0;
+}
+
+.lock {
+  background-color: #272b31;
+  color: #bf616a; // Change The Colour Of The Screen Lock
+  font-size: 60px; // Change The Size Of The Screen Lock
+}
+
+.github {
+  color: #3B4252;
+}
+
+.icon {
+  background-color: #272b31;
+}
+
+.instagram {
+  color: #A3BE8C;
+}
+.reddit {
+  color: #D08770;
+}
+
+.facebook {
+  color: #BF616A;
+}
+
+
+.code {
+  color: #8FBCBB;
+}
+
+.file {
+  color: #ebcb8b;
+}
+
+.terminal {
+  color: #A3BE8C;
+}
+
+.music {
+  background-color: #272b31;
+  color: #88c0d0;
+  font-size: 30px;
+}
+
+.player {
+  font-size: 50px;
+}
+
+.back {
+  color: #d08770;
+}
+.pause {
+  color: #bf616a;
+}
+
+.slider-vol-side scale trough {
+  all: unset;
+  background-color: #4e4e4e;
+  border-radius: 30px;
+  min-width: 20px;
+  margin-bottom: 25px;  
+  margin-top: 25px;
+}
+
+.slider-vol-side scale trough highlight {
+  background-color: #88C0D0;
+  border-radius: 10px;
+}
+
+.label-vol-side {
+  all: unset;
+  font-size: 25px;
+  color: #88c0d0;
+  margin-top: 10px;
+}
+
+.padding{
+  background-color: #272b31;
+}
+
+.slider-bright-side scale trough {
+  all: unset;
+  background-color: #4e4e4e;
+  border-radius: 30px;
+  min-width: 20px;
+  margin-bottom: 25px;  
+  margin-top: 25px;
+}
+
+.info{
+  all: unset;
+  font-size: 36px;
+  color: #88c0d0;
+}
+
+.slider-bright-side scale trough highlight {
+  background-color: #88C;
+  border-radius: 10px;
+}
+
+.label-bright-side {
+  all: unset;
+  font-size: 25px;
+  color: #88c0d0;
+  margin-top: 10px;
+}
