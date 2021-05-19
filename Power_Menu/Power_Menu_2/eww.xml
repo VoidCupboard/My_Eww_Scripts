@@ -1,0 +1,233 @@
+<eww>
+    <definitions>
+        <!-- Global -->
+        <def name="go_back">
+            <button class="colorize back"  tooltip="Go Back" onclick="bash ~/.config/eww/scripts/launcher.sh">  </button>
+        </def>
+
+        <def name="cross">
+            <button class="colorize special cross" tooltip="Go Back" onclick="bash ~/.config/eww/scripts/close.sh">  </button>
+        </def>
+
+        <def name="lock_it">
+            <box orientation="h" space-evenly="true">
+                <button class="lock_on" onclick="bash ~/.config/eww/scripts/rem_lock.sh">
+                    Lock  On!
+                </button>
+            </box>
+        </def>
+
+
+        <!-- Power Off Menu -->
+        <def name="poweroff">
+            <button class="special" onclick="bash ~/.config/eww/scripts/power_confirm.sh" tooltip="Poweroff">  </button>
+        </def>
+        <def name="yes_power">
+            <button class="yes colorize" tooltip="YES" onclick="poweroff"></button>
+        </def>
+        <def name="no_power">
+            <button class="no colorize" tooltip="NO" onclick="bash ~/.config/eww/scripts/cancel.sh">  </button>
+        </def>
+        <!-- Power Menu Ends -->
+
+        <!-- Restart Menu -->
+        <def name="restart">
+            <button class="special" onclick="bash ~/.config/eww/scripts/reboot_confirm.sh" tooltip="Reboot">  </button>
+        </def>
+        <def name="yes_restart">
+            <button class="yes colorize" tooltip="YES" onclick="systemctl reboot"></button>
+        </def>
+        <def name="no_restart">
+            <button class="no colorize" tooltip="NO" onclick="bash ~/.config/eww/scripts/cancel.sh">  </button>
+        </def>
+
+        <!-- Restart Menu Ends -->
+
+        <!-- Log Out Menu -->
+        <def name="log_out">
+            <button class="special" onclick="bash ~/.config/eww/scripts/log_out_confirm.sh" tooltip="Log Out">  </button>
+        </def>
+        <def name="yes_log_out">
+            <button class="yes colorize" tooltip="YES" onclick="systemctl restart"></button>
+        </def>
+        <def name="no_log_out">
+            <button class="no colorize" tooltip="NO" onclick="bash ~/.config/eww/scripts/cancel.sh">  </button>
+        </def>
+
+        <!-- Logout Menu Ends -->
+
+        <!-- Lock Menu -->
+        <def name="lock">
+            <button class="special" onclick="bash ~/.config/eww/scripts/lock_confirm.sh" tooltip="Lock">  </button>
+        </def>
+        <def name="yes_lock">
+            <button class="yes colorize" tooltip="YES" onclick="bash ~/.config/eww/scripts/lock.sh"></button>
+        </def>
+        <def name="no_lock">
+            <button class="no colorize" tooltip="NO" onclick="bash ~/.config/eww/scripts/cancel.sh">  </button>
+        </def>
+
+        <!-- Lock Menu Ends -->
+
+        <!-- Other Features --> 
+
+        <!-- Blur Window -->
+        <def name="blur_it">
+            <box class="blur"></box>
+        </def>
+
+        <!-- Text Info -->
+        <def name="text_info">
+            <button class="text">GoodBye, Master!</button>
+        </def>
+
+    </definitions>
+
+    <windows>
+        <!-- Blur Window -->
+        <window name="blur">
+            <geometry x="0%" y="0%" width="100%" height="100%" />
+            <widget>
+                <blur_it />
+            </widget>
+        </window>
+
+        <!-- Power Off Window -->
+        <window name="poweroff">
+            <geometry x="26%" y="50%" width="7%" height="10%" />
+            <widget>
+                <poweroff />
+            </widget>
+        </window>
+
+        <window name="yes_power">
+            <geometry x="40%" y="36%" width="7%" height="10%" />
+            <widget>
+                <yes_power />
+            </widget>
+        </window>
+        <window name="no_power">
+            <geometry x="48%" y="36%" width="7%" height="10%" />
+            <widget>
+                <no_power />
+            </widget>
+        </window>
+        <window name="back">
+            <geometry x="56%" y="36%" width="7%" height="10%" />
+            <widget>
+                <go_back />
+            </widget>
+        </window>
+        <!-- Power Off Window Ends -->
+
+        <!-- Restart Menu -->
+        <window name="restart">
+            <geometry x="35%" y="50%" width="7%" height="10%" />
+            <widget>
+                <restart />
+            </widget>
+        </window>
+
+
+        <window name="yes_restart">
+            <geometry x="40%" y="36%" width="7%" height="10%" />
+            <widget>
+                <yes_restart />
+            </widget>
+        </window>
+        <window name="no_restart">
+            <geometry x="48%" y="36%" width="7%" height="10%"  />
+            <widget>
+                <no_restart />
+            </widget>
+        </window>
+        <window name="back">
+            <geometry x="56%" y="36%" width="7%" height="10%" />
+            <widget>
+                <go_back />
+            </widget>
+        </window>
+
+        <!-- Restart Menu Ends -->
+        <window name="log_out">
+            <geometry x="44%" y="50%" width="7%" height="10%" />
+            <widget>
+                <log_out />
+            </widget>
+        </window>
+
+        <window name="yes_log_out">
+            <geometry x="40%" y="36%" width="7%" height="10%" />
+            <widget>
+                <yes_log_out />
+            </widget>
+        </window>
+
+        <window name="no_log_out">
+            <geometry x="48%" y="36%" width="7%" height="10%" />
+            <widget>
+                <no_log_out />
+            </widget>
+        </window>
+        <window name="back">
+            <geometry x="56%" y="36%" width="7%" height="10%" />
+            <widget>
+                <go_back />
+            </widget>
+        </window>
+        <!-- Logout Window Ends -->
+
+        <!-- Lock Window -->
+        <window name="lock">
+            <geometry x="53%" y="50%" width="7%" height="10%" />
+            <widget>
+                <lock />
+            </widget>
+        </window>
+
+        <window name="yes_lock">
+            <geometry x="40%" y="36%" width="7%" height="10%" />
+            <widget>
+                <yes_lock />
+            </widget>
+        </window>
+
+        <window name="no_lock">
+            <geometry x="48%" y="36%" width="7%" height="10%" />
+            <widget>
+                <no_lock />
+            </widget>
+        </window>
+        <window name="back">
+            <geometry x="56%" y="36%" width="7%" height="10%" />
+            <widget>
+                <go_back />
+            </widget>
+        </window>
+
+        <!-- Lock Window Ends -->
+        <!-- Cross WIndow -->
+        <window name="cross">
+            <geometry x="62%" y="50%" width="7%" height="10%" />
+            <widget>
+                <cross />
+            </widget>
+        </window>
+
+        <!-- Greeting -->
+        <window name="greet">
+            <geometry x="26%" y="37%" width="43%" height="10%" />
+            <widget>
+                <text_info />
+            </widget> 
+        </window>
+
+        <window name="lock_it">
+            <geometry x="0%" y="0%" width="100%" height="100%" />
+            <widget>
+                <lock_it />
+            </widget> 
+        </window>
+
+    </windows>
+</eww>

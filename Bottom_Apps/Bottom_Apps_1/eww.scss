@@ -1,0 +1,85 @@
+*{
+    all: unset;
+}
+
+window{
+    all: unset;
+}
+
+.icon{
+    padding-right: 20px;
+    font-size: 50px;
+}
+
+// Firefox Styles
+.firefox{
+    padding-left: 30px;
+    color: #D08770;
+}
+.firefox:hover{
+    font-size: 80px;
+}
+
+// Code Styles
+.code{
+    color: #88C0D0;
+}
+
+.code:hover{
+    font-size: 80px;
+}
+
+// Terminal 
+.terminal{
+    color: #A3BE8C;
+}
+.terminal:hover{
+    font-size: 80px;
+}
+
+// document Styles
+.document{
+    color: #8FBCBB
+}
+
+.document:hover{
+    font-size: 80px;
+}
+
+.manager{
+    color: #EBCB8B;
+}
+.manager:hover{
+    font-size: 80px;
+}
+
+.spotify{
+    color: #A3BE8C
+}
+
+.spotify:hover{
+    font-size: 80px;
+}
+
+.chat{
+    color: #B48EAD;
+}
+
+.chat:hover{
+    font-size: 80px;
+}
+
+
+.vlc{
+    color: #D08770;
+}
+
+.vlc:hover{
+    font-size: 80px;
+}
+
+.plank{
+    all: unset;
+    border-radius: 30px;
+    background: rgb(76 , 86 , 106 , .5);
+}
