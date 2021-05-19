@@ -2,6 +2,23 @@
 
 Various Scripts To Make Your Desktop Beautiful !
 
+# Installation 
+***
+
+1. Clone This Repository (`git clone https://github.com/0xsapphir3/My_Eww_Scripts.git`)
+2. Enter The Directory (`cd My_Eww_Scripts`)
+3. Choose Any Script That You Want To Use
+4. In the folder, you will find a file named `directory.txt`.
+5. Open The File And Write The Path of The `eww` binary file (__Example__: `/home/user/folder/eww/target/release/`)
+6. Copy The Scripts to the eww config file (`cp * -r ~/.config/eww/`)
+7. Make Sure That eww Daemon Is Running (`./eww daemon`)
+8. Run the Launcher Script In The Script Folder (`bash launcher.sh`)
+9. To close the laucher, run the Remove Laucher Script (`bash remove_launcher.sh`)
+
+__Last, Enjoy :)__
+
+***
+
 # ScreenShots
 ***
 
