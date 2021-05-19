@@ -1,4 +1,4 @@
-# my_eww_scripts
+# Eww_Scripts
 
 Various Scripts To Make Your Desktop Beautiful !
 
