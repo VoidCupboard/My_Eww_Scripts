@@ -1,1 +1,0 @@
-eww open-many code firefox planner terminal
