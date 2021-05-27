@@ -1,0 +1,1 @@
+playerctl metadata --format '{{ artist }}  |  {{ title }}' || echo "NOT PLAYING"

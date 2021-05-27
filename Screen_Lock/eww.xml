@@ -1,0 +1,252 @@
+<eww>
+    <definitions>
+        <def name="icons">
+            <box orientation="h" halign="center" space-evenly="false">
+                <medium />
+                <github />
+                <instagram />
+                <reddit />
+                <facebook />
+                <code />
+                <file />
+                <terminal />
+            </box>
+        </def>
+
+        <def name="clock">
+            <button>
+                {{ time }}
+            </button>
+        </def>
+
+        <def name="date">
+            <box orientation="h" space-evenly="true">
+                {{ day }} , {{ month }} {{ date }}
+            </box>
+        </def>
+
+        <def name="lock_sign">
+            <box orientation="h" space-evenly="false">
+                <box class="lock" space-evenly="true">
+                    Lock  On!
+                </box>
+                <input class="password" onchange="bash ~/.config/eww/scripts/remove_launcher.sh {}" />
+            </box>
+        </def>
+
+        <def name="info">
+            <box class="info" orientation="h" space-evenly="true">
+                Lock On! 
+            </box>
+        </def>
+
+        <def name="github">
+            <box orientation="h" space-evenly="true">
+                <button class='icon github' onclick="~/.config/eww/scripts/open_github.sh">  </button>
+            </box>
+        </def>
+        <def name="instagram">
+            <box orientation="h" space-evenly="true">
+                <button class='icon instagram' onclick="~/.config/eww/scripts/open_instagram.sh">  </button>
+            </box>
+        </def>
+        <def name="reddit">
+            <box orientation="h" space-evenly="true">
+                <button class='icon reddit' onclick="~/.config/eww/scripts/open_reddit.sh">  </button>
+            </box>
+        </def>
+        <def name="facebook">
+            <box orientation="h" space-evenly="true">
+                <button class='icon facebook' onclick="~/.config/eww/scripts/open_facebook.sh">  </button>
+            </box>
+        </def>
+        <def name="code">
+            <box orientation="h" space-evenly="true">
+                <button class='icon code' onclick="~/.config/eww/scripts/open_code.sh">  </button>
+            </box>
+        </def>
+        <def name="file">
+            <box orientation="h" space-evenly="true">
+                <button class='icon file' onclick="~/.config/eww/scripts/open_file.sh">  </button>
+            </box>
+        </def>
+        <def name="terminal">
+            <box orientation="h" space-evenly="true">
+                <button class='icon terminal' onclick="~/.config/eww/scripts/open_terminal.sh">  </button>
+            </box>
+        </def>
+        <def name="music">
+            <box orientation="h" class="music" space-evenly="true">
+                   {{music}}
+            </box>
+        </def>
+        <def name="blur_it">
+            <box orientation="h" class="blur"></box>
+        </def>
+
+        <def name="controls">
+            <!-- <box class="label-vol-side">  </box> -->
+            <box class="padding">
+                <box orientation="v" halign="center" space-evenly="true" class="sliders-side">
+                    <box orientation="v" class="slider-vol-side" space-evenly="true">
+                        <scale min="0" class="slider" flipped="true" max="101" orientation="v" value="{{ volume }}" onchange="amixer -D pulse sset Master {}%"/>
+                    </box>
+                </box>
+            </box>
+        </def>
+        <def name="brightness">
+            <box class="padding">
+                <box orientation="v" halign="center" space-evenly="true" class="sliders-side">
+                    <box orientation="v" class="slider-bright-side " space-evenly="true">
+                        <scale min="0" class="slider" flipped="true" max="101" orientation="v" value="{{ brightness }}" onchange="brightnessctl s {}%"/>
+                    </box>
+                </box>
+            </box>
+        </def>
+        <def name="authen">
+            <box orientation="h" class="music" space-evenly="true">
+                  Authenticating {{pattern}}
+            </box>
+        </def>
+        <def name="warning">
+            <box orientation="h" class="music" space-evenly="true">
+                Will be opened after Authentication
+            </box>
+        </def>
+
+    </definitions>
+
+    <variables>
+        <script-var name="time" interval="1s">
+            date +%X
+        </script-var>
+        <script-var name="day" interval="1s">
+            date +%A
+        </script-var>
+        <script-var name="volume" interval="10ms">amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'
+        </script-var>
+        <script-var name="month">date +%B</script-var>
+        <script-var name="date">date +%C</script-var>
+        <script-var name="music" interval="1s">
+            bash ~/.config/eww/scripts/music.sh
+        </script-var>
+        <script-var name="brightness" interval="3ms">brightnessctl -m -d intel_backlight | awk -F, '{print substr($4, 0, length($4)-1)}' | tr -d '%'
+        </script-var>
+        <script-var name="pattern" interval="1ms">
+            cat ~/.config/eww/pattern.txt
+        </script-var>
+    </variables>
+
+    <windows>
+        <window name="blur">
+            <geometry x="0%" y="0%" width="100%" height="100%" />
+            <widget>
+                <blur_it />
+            </widget>
+        </window>
+
+        <window name="date">
+            <geometry x='23%' y='14%' width="55%" height="10%" />
+            <widget>
+                <date />
+            </widget>
+        </window>
+        <window name="clock">
+            <geometry x='23%' y='25%' width="55%" height="10%"></geometry>
+            <widget>
+                <clock />
+            </widget>
+        </window>
+
+        <window name="lock" focusable="true">
+            <geometry x='23%' y='35%' width="55%" height="27%"></geometry>
+            <widget>
+                <lock_sign />
+            </widget>
+        </window>
+
+        <window name="authen">
+            <geometry x='18%' y='88%' width="65%" height="11%"></geometry>
+            <widget>
+                <authen />
+            </widget>
+        </window>
+
+        <window name="warning">
+            <geometry x='18%' y='2%' width="65%" height="11%"></geometry>
+            <widget>
+                <warning />
+            </widget>
+        </window>
+
+        <window name="music">
+            <geometry x='23%' y='65%' width="55%" height="10%"></geometry>
+            <widget class="music_place">
+                <music />
+            </widget>
+        </window>
+
+        <window name="file">
+            <geometry x='23%' y='76%' width="7%" height="11%"></geometry>
+            <widget>
+                <file />
+            </widget>
+        </window>
+
+        <window name="code-it">
+            <geometry x='31%' y='76%' width="7%" height="11%"></geometry>
+            <widget>
+                <code />
+            </widget>
+        </window>
+
+        <window name="facebook">
+            <geometry x='39%' y='76%' width="7%" height="11%"></geometry>
+            <widget>
+                <facebook />
+            </widget>
+        </window>
+
+        <window name="reddit">
+            <geometry x='47%' y='76%' width="7%" height="11%"></geometry>
+            <widget>
+                <reddit />
+            </widget>
+        </window>
+
+        <window name="instagram">
+            <geometry x='55%' y='76%' width="7%" height="11%"></geometry>
+            <widget>
+                <instagram />
+            </widget>
+        </window>
+
+        <window name="terminal">
+            <geometry x='71%' y='76%' width="7%" height="11%"></geometry>
+            <widget>
+                <terminal />
+            </widget>
+        </window>
+
+        <window name="github">
+            <geometry x='63%' y='76%' width="7%" height="11%"></geometry>
+            <widget>
+                <github />
+            </widget>
+        </window>
+        <window name="vol">
+            <geometry x='18%' y='14%' width="4%" height="73%"></geometry>
+            <widget>
+                <controls />
+            </widget>
+        </window>
+
+        <window name="bright">
+            <geometry x='79%' y='14%' width="4%" height="73%"></geometry>
+            <widget>
+                <brightness />
+            </widget>
+        </window>
+
+    </windows>
+</eww>
