@@ -1,1 +1,0 @@
-firefox https://www.github.com
