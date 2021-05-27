@@ -1,1 +1,1 @@
-/home/puffc0rn/Downloads/eww/target/release
+/home/path/eww/target/release
