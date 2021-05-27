@@ -52,6 +52,6 @@ __Screen Lock__
 
 # Notes
 
-1. To Unlock From The Lock, Click On The Lock Icon
+1. It will be most probably that the text of the Screen Lock will not position correct. So for this, you can go to eww.scss file and then find a comment (`// Position of Text`). Change the value with your desired one.
 2. If The Positioning Of The Item Does Not Fits You, You Can Edit The scss File. 
 
