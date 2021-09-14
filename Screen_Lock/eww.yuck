@@ -1,0 +1,124 @@
+
+    
+        (defwidget icons [] 
+            (box :orientation "h" :halign "center" :space-evenly "false" 
+                (medium)
+                (github)
+                (instagram)
+                (reddit)
+                (facebook)
+                (code)
+                (file)
+                (terminal)))
+        (defwidget clock [] 
+            (button time))
+        (defwidget date [] 
+            (box :orientation "h" :space-evenly "true" "
+                ${ day } , ${ month } ${ date }            "))
+        (defwidget lock_sign [] 
+            (box :orientation "h" :space-evenly "false" 
+                (box :class "lock" :space-evenly "true" "Lock  On!")
+                (input :class "password" :onchange "bash ~/.config/eww/scripts/remove_launcher.sh {}")))
+        (defwidget info [] 
+            (box :class "info" :orientation "h" :space-evenly "true" "Lock On!"))
+        (defwidget github [] 
+            (box :orientation "h" :space-evenly "true" 
+                (button :class "'icon" :github'  :onclick "~/.config/eww/scripts/open_github.sh" "")))
+        (defwidget instagram [] 
+            (box :orientation "h" :space-evenly "true" 
+                (button :class "'icon" :instagram'  :onclick "~/.config/eww/scripts/open_instagram.sh" "")))
+        (defwidget reddit [] 
+            (box :orientation "h" :space-evenly "true" 
+                (button :class "'icon" :reddit'  :onclick "~/.config/eww/scripts/open_reddit.sh" "")))
+        (defwidget facebook [] 
+            (box :orientation "h" :space-evenly "true" 
+                (button :class "'icon" :facebook'  :onclick "~/.config/eww/scripts/open_facebook.sh" "")))
+        (defwidget code [] 
+            (box :orientation "h" :space-evenly "true" 
+                (button :class "'icon" :code'  :onclick "~/.config/eww/scripts/open_code.sh" "")))
+        (defwidget file [] 
+            (box :orientation "h" :space-evenly "true" 
+                (button :class "'icon" :file'  :onclick "~/.config/eww/scripts/open_file.sh" "")))
+        (defwidget terminal [] 
+            (box :orientation "h" :space-evenly "true" 
+                (button :class "'icon" :terminal'  :onclick "~/.config/eww/scripts/open_terminal.sh" "")))
+        (defwidget music [] 
+            (box :orientation "h" :class "music" :space-evenly "true" "
+                   ${music}            "))
+        (defwidget blur_it [] 
+            (box :orientation "h" :class "blur"))
+        (defwidget controls [] 
+            ;;  (box :class "label-vol-side" "")
+             (box :class "padding" 
+                (box :orientation "v" :halign "center" :space-evenly "true" :class "sliders-side" 
+                    (box :orientation "v" :class "slider-vol-side" :space-evenly "true" 
+                        (scale :min 0 :class "slider" :flipped "true" :max 101 :orientation "v" :value volume :onchange "amixer -D pulse sset Master {}%")))))
+        (defwidget brightness [] 
+            (box :class "padding" 
+                (box :orientation "v" :halign "center" :space-evenly "true" :class "sliders-side" 
+                    (box :orientation "v" :class "slider-bright-side" :space-evenly "true" 
+                        (scale :min 0 :class "slider" :flipped "true" :max 101 :orientation "v" :value brightness :onchange "brightnessctl s {}%")))))
+        (defwidget authen [] 
+            (box :orientation "h" :class "music" :space-evenly "true" "
+                  Authenticating ${pattern}            "))
+        (defwidget warning [] 
+            (box :orientation "h" :class "music" :space-evenly "true" "Will be opened after Authentication"))
+                (defpoll time :interval "1s"  "date +%X")
+        (defpoll day :interval "1s"  "date +%A")
+        (defpoll volume :interval "10ms"  "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
+        (defpoll month  "date +%B")
+        (defpoll date  "date +%C")
+        (defpoll music :interval "1s"  "bash ~/.config/eww/scripts/music.sh")
+        (defpoll brightness :interval "3ms"  "brightnessctl -m -d intel_backlight | awk -F, '{print substr($4, 0, length($4)-1)}' | tr -d '%'")
+        (defpoll pattern :interval "1ms"  "cat ~/.config/eww/pattern.txt")
+                (defwindow blur 
+			    :geometry (geometry :x "0%" :y "0%" :width "100%" :height "100%")
+			     				(blur_it))
+        (defwindow date 
+			    :geometry (geometry :x "'23%'" :y "'14%'" :width "55%" :height "10%")
+			     				(date))
+        (defwindow clock 
+			    :geometry (geometry :x "'23%'" :y "'25%'" :width "55%" :height "10%")
+			     				(clock))
+        (defwindow lock :focusable "true" 
+			    :geometry (geometry :x "'23%'" :y "'35%'" :width "55%" :height "27%")
+			     				(lock_sign))
+        (defwindow authen 
+			    :geometry (geometry :x "'18%'" :y "'88%'" :width "65%" :height "11%")
+			     				(authen))
+        (defwindow warning 
+			    :geometry (geometry :x "'18%'" :y "'2%'" :width "65%" :height "11%")
+			     				(warning))
+        (defwindow music 
+			    :geometry (geometry :x "'23%'" :y "'65%'" :width "55%" :height "10%")
+			     				(music))
+        (defwindow file 
+			    :geometry (geometry :x "'23%'" :y "'76%'" :width "7%" :height "11%")
+			     				(file))
+        (defwindow code-it 
+			    :geometry (geometry :x "'31%'" :y "'76%'" :width "7%" :height "11%")
+			     				(code))
+        (defwindow facebook 
+			    :geometry (geometry :x "'39%'" :y "'76%'" :width "7%" :height "11%")
+			     				(facebook))
+        (defwindow reddit 
+			    :geometry (geometry :x "'47%'" :y "'76%'" :width "7%" :height "11%")
+			     				(reddit))
+        (defwindow instagram 
+			    :geometry (geometry :x "'55%'" :y "'76%'" :width "7%" :height "11%")
+			     				(instagram))
+        (defwindow terminal 
+			    :geometry (geometry :x "'71%'" :y "'76%'" :width "7%" :height "11%")
+			     				(terminal))
+        (defwindow github 
+			    :geometry (geometry :x "'63%'" :y "'76%'" :width "7%" :height "11%")
+			     				(github))
+        (defwindow vol 
+			    :geometry (geometry :x "'18%'" :y "'14%'" :width "4%" :height "73%")
+			     				(controls))
+        (defwindow bright 
+			    :geometry (geometry :x "'79%'" :y "'14%'" :width "4%" :height "73%")
+			     				(brightness))
+
+    
+

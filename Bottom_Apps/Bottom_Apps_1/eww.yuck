@@ -1,0 +1,40 @@
+
+    
+        (defwidget icons [] 
+            (box :orientation "h" :space-evenly "true" 
+                (firefox)
+                (code)
+                (terminal)
+                (document)
+                (manager)
+                (spotify)
+                (chat)
+                (vlc)))
+        (defwidget code [] 
+            (box     
+                (button :class "icon code" :onclick "bash ~/.config/eww/scripts/code.sh" "")))
+        (defwidget manager [] 
+            (box     
+                (button :class "icon manager" :onclick "bash ~/.config/eww/scripts/thunar.sh" "")))
+        (defwidget spotify [] 
+            (box     
+                (button :class "icon spotify" :onclick "bash ~/.config/eww/scripts/spotify.sh" "")))
+        (defwidget vlc [] 
+            (box     
+                (button :class "icon vlc" :onclick "bash ~/.config/eww/scripts/vlc.sh" "")))
+                (defwidget terminal [] 
+            (box     
+                (button :class "icon terminal" :onclick "bash ~/.config/eww/scripts/terminal.sh" "")))
+        (defwidget firefox [] 
+            (box     
+                (button :class "icon firefox" :onclick "bash ~/.config/eww/scripts/firefox.sh" "")))
+        (defwidget document [] 
+            (box     
+                (button :class "icon document" :onclick "bash ~/.config/eww/scripts/document.sh" "")))
+        (defwidget chat [] 
+            (box     
+                (button :class "icon chat" :onclick "bash ~/.config/eww/scripts/chat.sh" "")))
+                (defwindow plank 
+			    :geometry (geometry :x "22%" :y "87%" :width "55%" :height "11%")
+			     				(icons))
+    
